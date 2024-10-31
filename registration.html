@@ -8,15 +8,15 @@
     <title>Регистрация</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/registration.css">
-<!--    <script src="js/script.js" defer></script>-->
+    <script src="js/registration.js" defer></script>
 </head>
 <body>
 <header class="header">
     <div class="container">
-        <div class="logo">
+        <a href="index.html" class="logo">
             <div class="logo__txt">Айтилогия<span>Quiz</span></div>
             <img class="logo__img" src="images/hat.png" alt="student hat">
-        </div>
+        </a>
     </div>
 </header>
 
@@ -43,7 +43,7 @@
                 </div>
             </form>
             <div class="form__btn">
-                <button class="button">Перейти к выбору теста</button>
+                <button class="button" id="process" disabled>Перейти к выбору теста</button>
             </div>
         </div>
         <div class="form__image">

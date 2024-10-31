@@ -43,6 +43,7 @@ body {
     font-family: 'Museo Sans Cyril bold', sans-serif;
     color: #6933DC;
     display: flex;
+    text-decoration: none;
 
     span {
         font-family: 'Museo Sans Cyril', sans-serif ;
@@ -56,7 +57,7 @@ body {
     }
 }
 
-button {
+.button {
     padding: 14px 35px;
     background: #6933DC;
     border-radius: 6px;
@@ -66,6 +67,11 @@ button {
     border: 0;
     cursor: pointer;
     transition: all 0.4s;
+    text-decoration: none;
+}
+
+a.button {
+    display: inline-block
 }
 
 .btn-transparent {
@@ -77,6 +83,11 @@ button {
 .button:hover {
     background: #41267f;
     color: #fff;
+}
+
+.button:disabled {
+    background-color: #e2dfe7;
+    cursor: not-allowed;
 }
 
 .footer {
@@ -95,3 +106,13 @@ button {
         color: #6933DC;
     }
 }
+
+
+/*Основные цвета: Серо-синий и насыщенный индиго (#0E254E и #6933DC) — цвета,
+символизирующие профессионализм и современные технологии.*/
+
+/*Акцентные цвета: Акцентный цвет, такой как неоновый фиолетовый или светлый голубой
+(#6933DC и #00A6FB), для выделения кнопок и интерактивных элементов.*/
+/*color: #6933DC #0E254E #00A6FB #3d3b3b #ECECEC;*/
+/*Фоновые цвета: Светлые серые и пастельные оттенки, которые не отвлекают,
+но поддерживают современную эстетику (#F5F5F5 и #ECECEC).*/
