@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #6933DC;
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: 'Museo Sans Cyril', sans-serif ;
+    color: #333333;
+    /*font-size: 0;*/
+    /*position: relative;*/
+}
+/*----------------Fonts for pages----------*/
+@font-face {
+    font-family: 'Museo Sans Cyril';
+    src: url("../fonts/MuseoSansCyrl-500.ttf");
+
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyril bold';
+    src: url("../fonts/MuseoSansCyrl-700.ttf");
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 42px 0 40px 0;
+    border-bottom: 1px solid #DCDCF3;
+}
+
+.logo {
+    position: relative;
+    font-size: 30px;
+    font-family: 'Museo Sans Cyril bold', sans-serif;
+    color: #6933DC;
+    display: flex;
+
+    span {
+        font-family: 'Museo Sans Cyril', sans-serif ;
+    }
+
+    .logo__img {
+        position: absolute;
+        width: 2%;
+        top: -3px;
+        left: 204px;
+    }
+}
+
+button {
+    padding: 14px 35px;
+    background: #6933DC;
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 20px;
+    color: #FFFFFF;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.btn-transparent {
+    background-color: transparent;
+    border: 1px solid #6933DC;
+    color: #6933DC;
+}
+
+.button:hover {
+    background: #41267f;
+    color: #fff;
+}
+
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 13px;
+    line-height: 16px;
+    color: #DCDCF3;
+}
+
+.big__title {
+    font-family: 'Museo Sans Cyrl bold', sans-serif;
+    font-size: 54px;
+    line-height: 65px;
+    span {
+        color: #6933DC;
+    }
+}
