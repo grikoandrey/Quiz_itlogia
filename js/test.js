@@ -8,6 +8,7 @@
         prevButtonElement: null,
         passButtonElement: null,
         userResult: [],
+        exit: [],
 
         barOptionsElement: null,
 
@@ -31,6 +32,7 @@
             } else {
                 location.href = 'index.html';
             }
+            // console.log(this.quiz);
         },
         startQuiz() {
             // console.log(this.quiz);
@@ -51,16 +53,16 @@
             this.prepareProgressBar();
             this.showQuestion();
 
-            const timerElement = document.getElementById('timer');
-            let seconds = 59;
-            const interval = setInterval(function () {
-                seconds--;
-                timerElement.innerText = seconds;
-                if (seconds === 0) {
-                    clearInterval(interval);
-                    this.complete();
-                }
-            }.bind(this), 1000);
+            // const timerElement = document.getElementById('timer');
+            // let seconds = 59;
+            // const interval = setInterval(function () {
+            //     seconds--;
+            //     timerElement.innerText = seconds;
+            //     if (seconds === 0) {
+            //         clearInterval(interval);
+            //         this.complete();
+            //     }
+            // }.bind(this), 1000);
         },
 
         prepareProgressBar() {
@@ -76,7 +78,6 @@
                 const barItemTextElement = document.createElement('div');
                 barItemTextElement.className = 'test__progress-bar-item-text';
                 barItemTextElement.innerText = 'Вопрос ' + (i + 1);
-                // barItemTextElement.innerText = `Вопрос ${this.currentQuestionIndex + 1}`;
 
                 barItemElement.appendChild(barItemCircleElement);
                 barItemElement.appendChild(barItemTextElement);
@@ -123,8 +124,10 @@
             });
             if (chosenOption && chosenOption.chosenAnswerId) {
                 this.nextButtonElement.removeAttribute('disabled');
+                this.passButtonElement.classList.add('disabled')
             } else {
                 this.nextButtonElement.setAttribute('disabled', 'disabled');
+                this.passButtonElement.classList.remove('disabled');
             }
 
             if (this.currentQuestionIndex === this.quiz.questions.length) {
@@ -140,6 +143,7 @@
         },
         chooseAnswer() {
             this.nextButtonElement.removeAttribute('disabled');
+            this.passButtonElement.classList.add('disabled')
         },
         move(action) {
             const activeQuestion = this.quiz.questions[this.currentQuestionIndex - 1];
@@ -165,6 +169,7 @@
                 });
             }
             // console.log(this.userResult);
+            this.exit.push(chosenAnswerId); //----------------------------
 
             if (action === 'next' || action === 'pass') {
                 this.currentQuestionIndex++;
@@ -207,7 +212,7 @@
                 email: email,
                 results: this.userResult
             }));
-
+            // console.log(this.exit);
             if (xhr.status === 200 && xhr.responseText) {
                 let result = null;
                 try {
@@ -217,7 +222,7 @@
                 }
                 if (result) {
                     // console.log(result);
-                    location.href = `result.html?score=${result.score}&total=${result.total}`;
+                    location.href = `result.html${location.search}&score=${result.score}&total=${result.total}&exit=${this.exit}`;
                 }
             } else {
                 location.href = 'index.html';

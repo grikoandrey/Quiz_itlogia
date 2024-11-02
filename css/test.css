@@ -25,11 +25,13 @@
                 background-color: #DCDCF3;
                 border-radius: 50%;
             }
+
             .test__progress-bar-item-text {
                 font-size: 13px;
                 line-height: 16px;
             }
         }
+
         .test__progress-bar-item:not(:last-child)::before {
             content: "";
             z-index: -1;
@@ -40,6 +42,7 @@
             left: 28px;
             top: 10px;
         }
+
         .test__progress-bar-item.complete:not(:last-child)::before {
             background-color: #6933DC;
         }
@@ -165,6 +168,13 @@
 
         a:hover {
             text-decoration: underline;
+        }
+
+        a.disabled {
+            cursor: not-allowed;
+            color: #e2dfe7;
+            text-decoration: none;
+            pointer-events: none; /* Отключает кликабельность */
         }
     }
 }

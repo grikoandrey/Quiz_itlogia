@@ -8,7 +8,7 @@
     <title>Выбор теста</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/answers.css">
-    <!--    <script src="js/registration.js" defer></script>-->
+        <script src="js/checking.js" defer></script>
 </head>
 <body>
 <header class="header">
@@ -23,12 +23,12 @@
 <main class="answers">
     <div class="container">
         <div class="answers__content">
-            <h4 class="answers__pre-title">Результат прохождения теста <img src="images/light_arrow.png" alt="small arrow"><span>Тест №1. “JavaScript: Начальный уровень”</span></h4>
+            <h4 class="answers__pre-title">Результат прохождения теста <img src="images/light_arrow.png" alt="small arrow"><span id="test">Тест №1. “JavaScript: Начальный уровень”</span></h4>
             <h1 class="answers__title big__title"><span>Правильные ответы</span> к тесту</h1>
             <div class="answers__info">Тест выполнил
-                <span class="answers__data">Роман Чернов, roman@itlogia.ru</span>
+                <span class="answers__data" id="data">Роман Чернов, roman@itlogia.ru</span>
             </div>
-            <div class="answers__questions">
+            <div class="answers__questions" id="list-questions">
                 <div class="answer__question">
                     <div class="answers__question-title"><span>Вопрос 1:</span> Тут должен быть текст вопроса?</div>
                     <div class="answers__question-options">

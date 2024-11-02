@@ -18,6 +18,7 @@
             } else {
                 location.href = 'index.html';
             }
+            // console.log(this.quizzes);
         },
         processQuizzes() {
             // console.log(this.quizzes);
