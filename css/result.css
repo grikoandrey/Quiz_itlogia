@@ -1,5 +1,5 @@
 .result {
-    padding: 140px 0 91px 0;
+    padding: 100px 0 31px 0;
     text-align: center;
 
     .container {
@@ -32,6 +32,25 @@
         position: absolute;
         top: 80px;
         z-index: -1;
+    }
+
+    .check-question {
+        margin-top: 20px;
+        align-self: flex-end;
+
+        a {
+            font-size: 17px;
+            line-height: 20px;
+            color: #6933DC;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
     }
 }
 

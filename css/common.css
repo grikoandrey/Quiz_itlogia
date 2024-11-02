@@ -90,6 +90,12 @@ a.button {
     cursor: not-allowed;
 }
 
+.btn-transparent:disabled {
+    background-color: transparent;
+    border: 1px solid #e2dfe7;
+    color: #e2dfe7;
+}
+
 .footer {
     text-align: center;
     padding: 40px 0;
