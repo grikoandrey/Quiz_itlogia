@@ -1,20 +1,17 @@
 (function () {
     const Check = {
-        // quiz: null,
-        // name: '',
-        // lastName: '',
-        // email: '',
-        // questionsContainer: null,
 
         init() {
-            const url = new URL(location.href);
+            // передача через адресную строку заменена на session Storage
+            // const url = new URL(location.href);
+            this.name = sessionStorage.getItem("name");
+            this.lastName = sessionStorage.getItem("lastName");
+            this.email = sessionStorage.getItem("email");
 
-            this.name = url.searchParams.get("name");
-            this.lastName = url.searchParams.get("lastName");
-            this.email = url.searchParams.get("email");
+
             this.questionsContainer = document.getElementById('list-questions');
-            const id = url.searchParams.get("id");
-            this.userAnswers = url.searchParams.get("exit").split(',').map(Number);
+            const id = Number(sessionStorage.getItem("id"));
+            this.userAnswers = sessionStorage.getItem("exit").split(',').map(Number);
 
             const xhr = new XMLHttpRequest();
             xhr.open("GET", `https://testologia.ru/get-quiz?id=${id}`, false);
@@ -47,7 +44,6 @@
             // console.log(this.rightAnswers);
             // console.log(this.userAnswers);
             this.listAnswers();
-            // this.showAnswers();
         },
         listAnswers() {
             document.getElementById('test').innerText = this.quiz.name;

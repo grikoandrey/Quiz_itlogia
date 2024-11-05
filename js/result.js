@@ -3,9 +3,9 @@
         // getAnswers: null,
 
         init() {
-            const url = new URL(location.href);
-            let score = url.searchParams.get('score') || 0;
-            let total = url.searchParams.get('total') || 0;
+            // const url = new URL(location.href);
+            let score = sessionStorage.getItem('score') || 0;
+            let total = sessionStorage.getItem('total') || 0;
             document.getElementById('result__score').innerText = `${score}/${total}`;
 
             const that = this;
@@ -17,7 +17,9 @@
         },
 
         checkAnswers: function () {
-            location.href = `answers.html${location.search}`;
+            // передача через адресную строку заменена на session Storage
+            // location.href = `answers.html${location.search}`;
+            location.href = `answers.html`;
         }
     }
     Result.init();

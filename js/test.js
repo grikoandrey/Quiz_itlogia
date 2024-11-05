@@ -16,8 +16,9 @@
             checkUserData();
             checkUserId();
 
-            const url = new URL(location.href);
-            const testId = url.searchParams.get("id");
+            // передача через адресную строку заменена на session Storage
+            // const url = new URL(location.href);
+            const testId = sessionStorage.getItem("id");
             const xhr = new XMLHttpRequest();
             xhr.open("GET", 'https://testologia.ru/get-quiz?id=' + testId, false);
             xhr.send();
@@ -53,16 +54,16 @@
             this.prepareProgressBar();
             this.showQuestion();
 
-            // const timerElement = document.getElementById('timer');
-            // let seconds = 59;
-            // const interval = setInterval(function () {
-            //     seconds--;
-            //     timerElement.innerText = seconds;
-            //     if (seconds === 0) {
-            //         clearInterval(interval);
-            //         this.complete();
-            //     }
-            // }.bind(this), 1000);
+            const timerElement = document.getElementById('timer');
+            let seconds = 59;
+            const interval = setInterval(function () {
+                seconds--;
+                timerElement.innerText = seconds;
+                if (seconds === 0) {
+                    clearInterval(interval);
+                    this.complete();
+                }
+            }.bind(this), 1000);
         },
 
         prepareProgressBar() {
@@ -197,11 +198,16 @@
             this.showQuestion();
         },
         complete() {
-            const url = new URL(location.href);
-            const id = url.searchParams.get("id");
-            const name = url.searchParams.get("name");
-            const lastName = url.searchParams.get("lastName");
-            const email = url.searchParams.get("email");
+            // передача данных заменена на session Storage
+            // const url = new URL(location.href);
+            // const id = url.searchParams.get("id");
+            // const name = url.searchParams.get("name");
+            // const lastName = url.searchParams.get("lastName");
+            // const email = url.searchParams.get("email");
+            const name = sessionStorage.getItem("name");
+            const lastName = sessionStorage.getItem("lastName");
+            const email = sessionStorage.getItem("email");
+            const id = Number(sessionStorage.getItem("id"));
 
             const xhr = new XMLHttpRequest();
             xhr.open("POST", `https://testologia.ru/pass-quiz?id=${id}`, false);
@@ -217,12 +223,21 @@
                 let result = null;
                 try {
                     result = JSON.parse(xhr.responseText);
+                    console.log(result);
                 } catch (e) {
                     location.href = 'index.html';
                 }
                 if (result) {
                     // console.log(result);
-                    location.href = `result.html${location.search}&score=${result.score}&total=${result.total}&exit=${this.exit}`;
+                    sessionStorage.setItem('exit', this.exit);
+                    sessionStorage.setItem('score', result.score);
+                    sessionStorage.setItem('total', result.total);
+                    // передача через адресную строку заменена на session Storage
+                    // location.href = `result.html${location.search}&score=${result.score}&total=${result.total}&exit=${this.exit}`;
+                    // console.log("Exit:", JSON.parse(sessionStorage.getItem('exit')));
+                    // console.log("Score:", sessionStorage.getItem('score'));
+                    // console.log("Total:", sessionStorage.getItem('total'));
+                    location.href = `result.html`;
                 }
             } else {
                 location.href = 'index.html';

@@ -67,11 +67,14 @@
         processForm() {
             if (this.validateForm()) {
 
-                let paramString = '';
+                // let paramString = '';
                 this.fields.forEach(item => {
-                    paramString += `${(!paramString ? '?' : '&')}${item.name}=${item.element.value}`;
+                    // передача через адресную строку заменена на session Storage
+                    // paramString += `${(!paramString ? '?' : '&')}${item.name}=${item.element.value}`;
+                    sessionStorage.setItem(item.name, item.element.value);
                 })
-                location.href = `choice.html${paramString}`;
+                // location.href = `choice.html${paramString}`;
+                location.href = 'choice.html';
             }
         }
     };
