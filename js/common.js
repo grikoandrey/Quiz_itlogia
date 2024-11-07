@@ -6,7 +6,7 @@ function checkUserData() {
     const email = sessionStorage.getItem("email");
 
     if (!name || !lastName || !email) {
-        location.href = 'index.html';
+        location.href = '#/';
     }
 }
 
@@ -15,6 +15,6 @@ function checkUserId() {
     const testId = sessionStorage.getItem("id");
 
     if (!testId) {
-        location.href = 'index.html';
+        location.href = '#/';
     }
 }

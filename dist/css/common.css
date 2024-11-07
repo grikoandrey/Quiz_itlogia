@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #6933DC;
+}
+
+body {
+    background-color: #FFFFFF;
+    font-family: 'Museo Sans Cyril', sans-serif ;
+    color: #333333;
+    /*font-size: 0;*/
+    /*position: relative;*/
+}
+/*----------------Fonts for pages----------*/
+@font-face {
+    font-family: 'Museo Sans Cyril';
+    src: url("../fonts/MuseoSansCyrl-500.ttf");
+
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyril bold';
+    src: url("../fonts/MuseoSansCyrl-700.ttf");
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 42px 0 40px 0;
+    border-bottom: 1px solid #DCDCF3;
+}
+
+.logo {
+    position: relative;
+    font-size: 30px;
+    font-family: 'Museo Sans Cyril bold', sans-serif;
+    color: #6933DC;
+    display: flex;
+    text-decoration: none;
+
+    span {
+        font-family: 'Museo Sans Cyril', sans-serif ;
+    }
+
+    .logo__img {
+        position: absolute;
+        width: 2%;
+        top: -3px;
+        left: 204px;
+    }
+}
+
+.button {
+    padding: 14px 35px;
+    background: #6933DC;
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 20px;
+    color: #FFFFFF;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.4s;
+    text-decoration: none;
+}
+
+a.button {
+    display: inline-block
+}
+
+.btn-transparent {
+    background-color: transparent;
+    border: 1px solid #6933DC;
+    color: #6933DC;
+}
+
+.button:hover {
+    background: #41267f;
+    color: #fff;
+}
+
+.button:disabled {
+    background-color: #e2dfe7;
+    cursor: not-allowed;
+}
+
+.btn-transparent:disabled {
+    background-color: transparent;
+    border: 1px solid #e2dfe7;
+    color: #e2dfe7;
+}
+
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 13px;
+    line-height: 16px;
+    color: #DCDCF3;
+}
+
+.big__title {
+    font-family: 'Museo Sans Cyrl bold', sans-serif;
+    font-size: 54px;
+    line-height: 65px;
+    span {
+        color: #6933DC;
+    }
+}
+
+
+/*Основные цвета: Серо-синий и насыщенный индиго (#0E254E и #6933DC) — цвета,
+символизирующие профессионализм и современные технологии.*/
+
+/*Акцентные цвета: Акцентный цвет, такой как неоновый фиолетовый или светлый голубой
+(#6933DC и #00A6FB), для выделения кнопок и интерактивных элементов.*/
+/*color: #6933DC #0E254E #00A6FB #3d3b3b #ECECEC;*/
+/*Фоновые цвета: Светлые серые и пастельные оттенки, которые не отвлекают,
+но поддерживают современную эстетику (#F5F5F5 и #ECECEC).*/
